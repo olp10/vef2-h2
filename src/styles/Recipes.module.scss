@@ -1,0 +1,47 @@
+.title {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.recipeContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 5rem;
+  width: 80vw;
+}
+
+.recipe {
+  margin: 1rem auto;
+  text-align: center;
+  width: 50%;
+  background-color: rgb(228, 228, 228);
+
+  & p {
+    margin: auto;
+    margin-top: .8rem;
+    margin-bottom: 2rem;
+    max-width: 50%;
+  }
+
+  & h2 {
+    margin: 1rem auto;
+  }
+}
+
+.recipeName { margin-top: 2rem; }
+.recipeDescription { margin-top: 1rem; }
+.recipeInstructions { width: 30%; margin: auto; }
+
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem auto;
+  max-width: 40%;
+  justify-content: center;
+
+  & img {
+    margin-right: 3rem;
+    max-width: 30%;
+  }
+}
