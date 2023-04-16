@@ -1,5 +1,6 @@
 import Header from '@/components/Header/Header'
 import Head from 'next/head'
+import Footer from './Footer/Footer'
 
 type LayoutProps = {
     user?: any,
@@ -19,7 +20,7 @@ export default function Layout({ user, loading = false, children }: LayoutProps)
             <main>
                 <div>{children}</div>
             </main>
-
+            <Footer/>
         </>
     )
 }

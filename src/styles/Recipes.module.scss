@@ -30,7 +30,12 @@
 }
 
 .recipeName { margin-top: 2rem; }
-.recipeDescription { margin-top: 1rem; }
+.recipeDescription { 
+  margin-top: 1rem; 
+  width: 30%; 
+  margin: auto; 
+  margin-top: 1rem;
+}
 .recipeInstructions { width: 30%; margin: auto; }
 
 .imageContainer {
