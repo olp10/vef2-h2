@@ -27,13 +27,17 @@
   & h2 {
     margin: 1rem auto;
   }
+
+  & img {
+    max-width: 70%;
+  }
 }
 
 .recipeName { margin-top: 2rem; }
-.recipeDescription { 
-  margin-top: 1rem; 
-  width: 30%; 
-  margin: auto; 
+.recipeDescription {
+  margin-top: 1rem;
+  width: 30%;
+  margin: auto;
   margin-top: 1rem;
 }
 .recipeInstructions { width: 30%; margin: auto; }

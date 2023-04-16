@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Link from 'next/link';
 import './Header.module.scss';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 type HeaderProps = {
   user?: any,
@@ -8,15 +10,24 @@ type HeaderProps = {
 }
 
 export default function Header({ user, loading }: HeaderProps) {
+  const router = useRouter();
+  const [current, setCurrent] = useState(router.pathname);
+
+  useEffect(() => {
+    setCurrent(router.pathname);
+  }, [router.pathname]);
+
   return (
       <header>
         <nav>
           <ul>
             <li>
-              <Link href="/">Heim</Link>
+              {current === '/' && <Link href="/"><strong>Heim</strong></Link>}
+              {current !== '/' && <Link href="/">Heim</Link>}
             </li>
             <li>
-              <Link href="/recipes">Allar uppskriftir</Link>
+              {current === '/recipes' && <Link href="/recipes"><strong>Allar uppskriftir</strong></Link>} 
+              {current !== '/recipes' && <Link href="/recipes">Allar Uppskriftir</Link>}
             </li>
             {!loading &&
               (user ? (

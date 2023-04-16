@@ -88,3 +88,35 @@ ul {
   margin-top: 1rem;
   padding: .5rem;
 }
+
+.editRecipeForm {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: left;
+  width: 20%;
+
+  > label {
+    margin-right: .3rem;
+    margin-bottom: .3rem;
+  }
+  > input, textarea {
+    margin-bottom: 1rem;
+    padding: .5rem;
+  }
+  > textarea {
+    height: 5rem;
+  }
+
+  > button {
+    background-color: #5a9cff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    height: 2rem;
+    margin: auto;
+    width: 5rem;
+  }
+}
