@@ -38,11 +38,11 @@ export default function Recipes() {
   async function getAllRecipes() {
     setState('loading');
     console.log(user?.name);
-    
-    // Auth0 check if user has admin role
-    
 
-    
+    // Auth0 check if user has admin role
+
+
+
 
     const response = await fetch(
       `http://localhost:3001/recipes?limit=${limit}&offset=${offset}`

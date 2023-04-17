@@ -6,6 +6,7 @@ import styles from "../../styles/Recipes.module.scss";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import Layout from "@/components/Layout";
 import Link from "next/link";
+import Ingredients from "@/components/Ingredients/ingredients";
 
 export type Recipe = {
   id: number;
@@ -28,7 +29,7 @@ export default function Recipe() {
   const router = useRouter();
   const { id } = router.query
 
-  
+
   // Færa þetta og exporta
   async function getRecipe(id : string | string[] | undefined) {
     const response = await fetch(`http://localhost:3001/recipes/${id}`);
@@ -36,23 +37,22 @@ export default function Recipe() {
     setRecipe(data);
   }
 
-  
-
-  getRecipe(id);
+  if (recipe.name === '') {
+    getRecipe(id);
+  }
 
   return (
     <>
         <Layout user={user} loading={isLoading}>
             <h1 className={styles.recipeName}>{recipe.name.toUpperCase()}</h1>
-            <h3 className={styles.recipeDescription}>Description: {recipe.description}</h3>
+            <h3 className={styles.recipeDescription}> {recipe.description}</h3>
             <div className={styles.imageContainer}>
                 <img src={recipe.image} alt={recipe.name} />
-                <p>lorem ipsum</p>
-                
-                
-            </div>
 
-            <h4 className={styles.recipeInstructions}>Instructions: {recipe.instructions}</h4>
+            </div>
+            <h3>Hráefni:</h3>
+            <Ingredients />
+            <h4 className={styles.recipeInstructions}>{recipe.instructions}</h4>
             {/* Edit takki ef notandi er skráður inn */}
             <Link
                 href={`/recipes/${recipe.id}/edit`}>

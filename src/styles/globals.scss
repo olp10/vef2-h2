@@ -119,4 +119,16 @@ ul {
     margin: auto;
     width: 5rem;
   }
+
+  & .ingredientsRow {
+    display: flex;
+    flex-direction: row;
+
+    & textarea {
+      margin-left: 2rem;
+      margin-right: 1rem;
+      height: 2.5rem;
+      width: 4rem;
+    }
+  }
 }
