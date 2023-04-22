@@ -45,7 +45,7 @@ export default function Recipes() {
 
 
     const response = await fetch(
-      `http://localhost:3001/recipes?limit=${limit}&offset=${offset}`
+      `https://vef2-h2-production.up.railway.app/recipes?limit=${limit}&offset=${offset}`
     );
     const data = await response.json();
     setRecipes(data);
@@ -56,7 +56,7 @@ export default function Recipes() {
       setState('empty');
     }
 
-    const recipeCount = await fetch(`http://localhost:3001/recipes`);
+    const recipeCount = await fetch(`https://vef2-h2-production.up.railway.app/recipes`);
     const recipeCountData = await recipeCount.json();
     setNumOfRecipes(recipeCountData.length);
 

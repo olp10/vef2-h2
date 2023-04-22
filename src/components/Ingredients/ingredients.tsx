@@ -25,7 +25,7 @@ export default function Ingredients() {
     setState('loading');
 
     const response = await fetch(
-      `http://localhost:3001/recipes/${id}/ingredients`
+      `https://vef2-h2-production.up.railway.app/recipes/${id}/ingredients`
     );
     const data = await response.json();
     setIngredients(data)
