@@ -32,7 +32,7 @@ export default function Recipe() {
 
   // Færa þetta og exporta
   async function getRecipe(id : string | string[] | undefined) {
-    const response = await fetch(`https://vef2-h2-production.up.railway.app/recipes/${id}`);
+    const response = await fetch(`https://vef2-2023-h1-production-e32d.up.railway.app/recipes/${id}`);
     const data = await response.json();
     setRecipe(data);
   }

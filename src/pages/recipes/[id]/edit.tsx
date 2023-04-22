@@ -25,7 +25,7 @@ export default function Edit() {
     const { user, isLoading } = useUser();
 
     async function getRecipe(id : string | string[] | undefined) {
-        const response = await fetch(`https://vef2-h2-production.up.railway.app/recipes/${id}`);
+        const response = await fetch(`https://vef2-2023-h1-production-e32d.up.railway.app/recipes/${id}`);
         const data = await response.json();
         setRecipe(data);
     }
@@ -34,7 +34,7 @@ export default function Edit() {
     }
 
     async function getIngredients(id: string | string[] | undefined) {
-      const response2 = await fetch(`https://vef2-h2-production.up.railway.app/recipes/${id}/ingredients`);
+      const response2 = await fetch(`https://vef2-2023-h1-production-e32d.up.railway.app/recipes/${id}/ingredients`);
       const data2 = await response2.json();
       setIngredients(data2);
     }
@@ -77,7 +77,7 @@ export default function Edit() {
 
     function submitEditRecipe() {
       console.log(recipeName, description, instructions, image);
-      fetch(`https://vef2-h2-production.up.railway.app/recipes/${router.query.id}`, {
+      fetch(`https://vef2-2023-h1-production-e32d.up.railway.app/recipes/${router.query.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ export default function Edit() {
       });
 
       console.log("Patch ingredients", ingredients);
-      fetch(`https://vef2-h2-production.up.railway.app/recipes/${router.query.id}/ingredients`, {
+      fetch(`https://vef2-2023-h1-production-e32d.up.railway.app/recipes/${router.query.id}/ingredients`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
